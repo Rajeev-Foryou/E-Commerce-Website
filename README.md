@@ -1,47 +1,41 @@
-## Milestone 4 - User Model, Controllers & File Uploads
+## eCommerce Website - Milestone 5
+Overview
+This milestone marks significant progress in the development of the eCommerce website. Key features have been implemented, improving both functionality and user experience. This document provides details on the work completed, technologies used, and setup instructions.
 
-Introduction 🚀
-Welcome to Milestone 4! In this milestone, we will focus on enhancing our backend by implementing a User Model, setting up controllers to handle user-related data, and enabling file uploads using Multer. By the end of this milestone, you will have a structured way to store user data, manage interactions, and support file uploads.
-
-Learning Goals 🎯
-By the end of this milestone, you will:
-
-Create a User Model: Define the structure of user data in the database.
-Create a User Controller: Manage user-related operations such as adding and retrieving user information.
-Enable and Configure Multer: Implement file uploads to store user profile pictures or other files.
-Update the README file: Document your progress effectively.
-Key Concepts 📌
-
-1. What’s a Model?
-   A model is like a blueprint that defines how data is stored in the database. In MongoDB, we use Schemas to structure our data.
-
-Example: A User Model may include fields like name, email, and password.
-This ensures consistency in how data is saved and retrieved. 2. What’s a Controller?
-A controller is responsible for handling user interactions with the application. It acts as an intermediary between the user and the database.
-
-Example: When a user signs up, the controller handles the request, processes the data, and saves it to the database.
-Think of it as a manager that directs requests and responses efficiently. 3. File Uploads with Multer
-Multer is a middleware for handling file uploads in Node.js applications.
-
-It enables users to upload profile pictures or other documents.
-It stores files in a designated folder and provides access to them when needed.
-Steps to Complete Milestone 4 📝
-This milestone includes the following steps:
-
-Create the User Model
-
-Define a schema for user data using Mongoose.
-Ensure fields like name, email, password, and profilePicture are included.
-Create the User Controller
-
-Implement functions to handle user-related actions such as registering a user and retrieving user data.
-Set Up Multer for File Uploads
-
-Configure Multer to allow users to upload files.
-Store uploaded files in a designated folder.
-Update the README File
-
-Document the new changes made in this milestone.
-Provide clear instructions on how to use the new features.
-Submission Guidelines 📥
-To complete this milestone, follow these submission steps:
+Features Implemented
+User Signup & Authentication: Secure user registration and login system.
+Product Listings & Categories: Users can browse products sorted into categories.
+Checkout Process: Integrated payment gateway and order confirmation.
+Admin Panel: Allows product management, order tracking, and user management.
+UI Enhancements: Improved navigation, responsiveness, and user-friendly design.
+Technologies Used
+Frontend: React.js / Next.js (or your choice of framework)
+Backend: Node.js / Express.js (or any backend stack used)
+Database: MongoDB / MySQL / PostgreSQL
+Authentication: JWT / OAuth
+Payment Gateway: Stripe / PayPal Integration
+Hosting & Deployment: AWS / Firebase / Vercel / Netlify
+Installation & Setup
+Prerequisites
+Node.js installed
+Database setup (MongoDB, MySQL, or PostgreSQL)
+Stripe/PayPal API keys (if applicable)
+Steps
+Clone the repository:
+git clone https://github.com/your-repo-url.git
+cd ecommerce-project
+Install dependencies:
+npm install
+Setup environment variables: Create a .env file and add necessary credentials (database, API keys, etc.).
+DATABASE_URL=your-database-url
+JWT_SECRET=your-secret-key
+STRIPE_API_KEY=your-stripe-key
+Start the development server:
+npm run dev
+Open your browser and go to:
+http://localhost:3000
+Next Steps
+Implement order history for users
+Optimize performance and SEO
+Enhance security measures
+Expand product filters and search functionality
