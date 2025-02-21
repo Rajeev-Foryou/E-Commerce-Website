@@ -1,47 +1,75 @@
-## Milestone 4 - User Model, Controllers & File Uploads
+## E-Commerce Website - Milestone 6
 
-Introduction 🚀
-Welcome to Milestone 4! In this milestone, we will focus on enhancing our backend by implementing a User Model, setting up controllers to handle user-related data, and enabling file uploads using Multer. By the end of this milestone, you will have a structured way to store user data, manage interactions, and support file uploads.
+📌 Overview
+This is the Milestone 6 update for the E-Commerce Website project. It includes enhanced features, bug fixes, and performance improvements. The project is built using Node.js, Express, MongoDB, and React.
 
-Learning Goals 🎯
-By the end of this milestone, you will:
+🚀 Features Implemented
+🛒 User Authentication
+User sign-up, login, and logout with password hashing using bcrypt.js.
+JWT-based authentication and authorization.
+📦 Product Management
+CRUD operations (Create, Read, Update, Delete) for products.
+Image uploads using Cloudinary.
+Category and filtering support.
 
-Create a User Model: Define the structure of user data in the database.
-Create a User Controller: Manage user-related operations such as adding and retrieving user information.
-Enable and Configure Multer: Implement file uploads to store user profile pictures or other files.
-Update the README file: Document your progress effectively.
-Key Concepts 📌
+🛍️ Shopping Cart
+Add, remove, and update products in the cart.
+Persistent cart using local storage & backend.
+💳 Checkout & Payments
+Integrated Stripe Payment Gateway for secure transactions.
+Order summary and confirmation system.
 
-1. What’s a Model?
-   A model is like a blueprint that defines how data is stored in the database. In MongoDB, we use Schemas to structure our data.
+🏪 Admin Dashboard
+Manage users, products, and orders.
+Role-based access control for security.
+🛠️ Technologies Used
+Frontend: React.js, Redux, Tailwind CSS
+Backend: Node.js, Express.js, MongoDB
+Authentication: JWT, bcrypt.js
+Payment Integration: Stripe API
+Cloud Storage: Cloudinary
+Version Control: Git & GitHub
+⚙️ Installation Guide
+1️⃣ Clone the repository
+git clone https://github.com/MadhavGarg98/S85_ecommerce.git
+cd S85_ecommerce
+2️⃣ Install dependencies
+Backend
+cd backend
+npm install
+Frontend
+cd ../frontend
+npm install
+3️⃣ Setup Environment Variables
+Create a .env file inside backend/config/ and add:
 
-Example: A User Model may include fields like name, email, and password.
-This ensures consistency in how data is saved and retrieved. 2. What’s a Controller?
-A controller is responsible for handling user interactions with the application. It acts as an intermediary between the user and the database.
-
-Example: When a user signs up, the controller handles the request, processes the data, and saves it to the database.
-Think of it as a manager that directs requests and responses efficiently. 3. File Uploads with Multer
-Multer is a middleware for handling file uploads in Node.js applications.
-
-It enables users to upload profile pictures or other documents.
-It stores files in a designated folder and provides access to them when needed.
-Steps to Complete Milestone 4 📝
-This milestone includes the following steps:
-
-Create the User Model
-
-Define a schema for user data using Mongoose.
-Ensure fields like name, email, password, and profilePicture are included.
-Create the User Controller
-
-Implement functions to handle user-related actions such as registering a user and retrieving user data.
-Set Up Multer for File Uploads
-
-Configure Multer to allow users to upload files.
-Store uploaded files in a designated folder.
-Update the README File
-
-Document the new changes made in this milestone.
-Provide clear instructions on how to use the new features.
-Submission Guidelines 📥
-To complete this milestone, follow these submission steps:
+MONGO_URI=<your-mongodb-uri>
+JWT_SECRET=<your-secret-key>
+STRIPE_SECRET=<your-stripe-key>
+CLOUDINARY_URL=<your-cloudinary-url>
+4️⃣ Run the Application
+Backend
+cd backend
+npm run dev
+Frontend
+cd frontend
+npm start
+📄 API Endpoints
+User Routes
+POST /api/auth/register - Register a new user
+POST /api/auth/login - User login
+GET /api/auth/profile - Get user profile (Protected)
+Product Routes
+GET /api/products - Get all products
+POST /api/products - Add a new product (Admin)
+PUT /api/products/:id - Update product (Admin)
+DELETE /api/products/:id - Delete product (Admin)
+🛠 Future Enhancements
+Wishlist functionality
+Product reviews & ratings
+Email notifications for order updates
+🤝 Contributing
+Fork the repo
+Create a new branch (feature-branch)
+Commit changes
+Push and create a pull request
