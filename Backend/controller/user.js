@@ -7,6 +7,7 @@ const { upload } = require("../multer");
 const ErrorHandler = require("../utils/ErrorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const bcrypt = require("bcryptjs");
+const { Console } = require("console");
 require("dotenv").config();
 
 router.post(
@@ -29,12 +30,12 @@ router.post(
       }
       return next(new ErrorHandler("User already exists", 400));
     }
-
     let fileUrl = "";
     if (req.file) {
       fileUrl = path.join("uploads", req.file.filename);
     }
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password.trim(), 10);
+
     console.log("At Create ", "Password: ", password, "Hash: ", hashedPassword);
     const user = await User.create({
       name,
@@ -58,16 +59,22 @@ router.post(
     if (!email || !password) {
       return next(new ErrorHandler("Please provide email and password", 400));
     }
-    const user = await User.findOne({ email }).select("+password");
+    const user = await User.findOne({ email: email }, { password: 1 });
+    console.log(user);
     if (!user) {
       return next(new ErrorHandler("Invalid Email or Password", 401));
     }
-    const isPasswordMatched = await bcrypt.compare(password, user.password);
-    console.log("At Auth", "Password: ", password, "Hash: ", user.password);
+
+    const isPasswordMatched = await bcrypt.compare(
+      password.trim(),
+      user.password
+    );
+
     if (!isPasswordMatched) {
       return next(new ErrorHandler("Invalid Email or Password", 401));
     }
     user.password = undefined;
+    console.log("Success");
     res.status(200).json({
       success: true,
       user,

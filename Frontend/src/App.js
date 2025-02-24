@@ -1,7 +1,12 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LoginPage, SignUpPage } from "./Routess.js"; // Import fixed
+import {
+  LoginPage,
+  SignupPage,
+  ActivationPage,
+  SignUpPage,
+} from "./Routess.js";
+import "./App.css";
 
 const App = () => {
   return (
@@ -9,6 +14,10 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
+        <Route
+          path="/activation/:activation_token"
+          element={<ActivationPage />}
+        />
       </Routes>
     </BrowserRouter>
   );
