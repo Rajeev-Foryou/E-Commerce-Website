@@ -1,6 +1,12 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LoginPage, Home, ActivationPage, SignUpPage } from "./Routess.js";
+import {
+  LoginPage,
+  Home,
+  ActivationPage,
+  SignUpPage,
+  CreateProduct,
+} from "./Routess.js";
 import "./App.css";
 
 const App = () => {
@@ -14,6 +20,7 @@ const App = () => {
           path="/activation/:activation_token"
           element={<ActivationPage />}
         />
+        <Route path="/create-product" element={<CreateProduct />} />
       </Routes>
     </BrowserRouter>
   );
