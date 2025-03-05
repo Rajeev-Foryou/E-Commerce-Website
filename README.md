@@ -1,13 +1,10 @@
-## Milestone 15: Navbar Component 🚀
-✅ Creating the Navbar Component
-Designed a Nav component with links to key pages:
-🏠 Home
-📦 My Products
-➕ Add Product
-🛒 Cart
-✅ Making the Navbar Responsive
-Ensured the Navbar adapts to all screen sizes.
-Implemented a mobile-friendly design with a collapsible menu.
-✅ Reusing the Navbar Across Pages
-Added the Nav component to all application pages.
-Ensured smooth and intuitive navigation between different sections.
+## Milestone 16: Product Info Page 🚀
+
+✅ Creating the Product Info Page
+Designed a Product Info page to display detailed product information.
+✅ Adding Quantity Selection and Cart Button
+Implemented a Quantity Selector to allow users to choose the desired quantity.
+Added an Add to Cart button to facilitate easy product purchase.
+✅ Dynamic Data Rendering
+Integrated backend API calls to fetch and display product details dynamically.
+Ensured the page updates based on the selected product.
