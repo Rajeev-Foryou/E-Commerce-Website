@@ -7,7 +7,6 @@ const router = express.Router();
 const { pupload } = require("../multer");
 const path = require("path");
 
-// Validation function
 const validateProductData = (data) => {
   const errors = [];
 
@@ -62,7 +61,6 @@ router.post(
           .json({ error: "Email does not exist in the users database" });
       }
 
-      // Create and save the new product
       const newProduct = new Product({
         name,
         description,
@@ -73,7 +71,6 @@ router.post(
         email,
         images,
       });
-
       await newProduct.save();
 
       res.status(201).json({
@@ -95,7 +92,6 @@ router.get("/get-products", async (req, res) => {
     const productsWithFullImageUrl = products.map((product) => {
       if (product.images && product.images.length > 0) {
         product.images = product.images.map((imagePath) => {
-          // Image URLs are already prefixed with /products
           return imagePath;
         });
       }
@@ -128,6 +124,7 @@ router.get("/my-products", async (req, res) => {
 });
 
 router.get("/product/:id", async (req, res) => {
+  console.log("Fetching product");
   const { id } = req.params;
   try {
     const product = await Product.findById(id);
