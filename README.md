@@ -1,10 +1,13 @@
-## Milestone 13: Product Update Feature 🚀
+## Milestone 14: Deleting Products 🚀
 
-✅ Overview
-Implemented the ability to update product details using the product ID. Users can modify product name, price, and image.
+✅ Backend Delete Endpoint
+Created an endpoint to delete a product by its ID from MongoDB.
+Implemented logic to find the product and remove it from the database.
 
-✅ Key Features
-Edit Product Details: Users can update product information. Update by Product ID: Changes are applied based on the product’s unique identifier. Real-Time Data Fetching: Updated details are reflected instantly.
+✅ Frontend Delete Button
+Added a Delete button to each product card.
+When clicked, it sends the product ID to the server endpoint for deletion.
 
-✅ Implementation
-Created a PUT API endpoint to update product details in MongoDB. Designed an edit form in the frontend with pre-filled data. Ensured dynamic updates by fetching the latest product data.
+✅ Updating UI After Deletion
+Ensured the product is removed from the frontend dynamically after successful deletion.
+Implemented confirmation prompts before deletion for better user experience.
