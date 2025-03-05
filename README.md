@@ -1,4 +1,5 @@
-Milestone 16: Product Info Page 🚀
+## Milestone 16: Product Info Page 🚀
+
 ✅ Creating the Product Info Page
 Designed a Product Info page to display detailed product information.
 ✅ Adding Quantity Selection and Cart Button
