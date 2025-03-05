@@ -7,6 +7,8 @@ import {
   SignUpPage,
   CreateProduct,
   MyProducts,
+  Cart,
+  ProductDetails,
 } from "./Routess.js";
 import "./App.css";
 
@@ -22,7 +24,10 @@ const App = () => {
           element={<ActivationPage />}
         />
         <Route path="/create-product" element={<CreateProduct />} />
-        <Route path="/myproducts" element={<MyProducts />} />
+        <Route path="/create-product/:id" element={<CreateProduct />} />
+        <Route path="/my-products" element={<MyProducts />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
       </Routes>
     </BrowserRouter>
   );
