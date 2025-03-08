@@ -1,17 +1,14 @@
-## Milestone 17: Adding Products to Cart
+## Milestone 18: Fetching Cart Products
 
-✅ Updating User Schema
-Modified the User Schema to include a cart field for storing added products.
+✅ Backend Cart Retrieval Endpoint
+Created an endpoint to fetch all products inside a user's cart.
 
-✅ Cart Schema Implementation
-Created a Cart Schema in Mongoose to store cart product details.
+✅ User-Based Filtering
+Implemented logic to retrieve cart products based on the logged-in user's email.
 
-✅ Backend Cart Endpoint
-Developed an API endpoint to receive product details and store them in the cart collection in MongoDB.
-
-✅ API Integration
-Ensured that product details are properly received from the frontend and stored in the cart.
+✅ API Integration with Frontend
+Integrated the frontend cart page with the backend to fetch and display cart items.
 
 ✅ Testing and Validation
-Implemented input validation to ensure correct product details are stored.
-Tested API responses to confirm successful cart storage.
+Ensured that the cart data retrieval process is working correctly.
+Tested API responses for accuracy and efficiency.
