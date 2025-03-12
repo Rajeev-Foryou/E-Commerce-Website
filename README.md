@@ -1,20 +1,14 @@
-### **Milestone 19: Cart Page UI & Quantity Management**
+### Milestone 20: User Profile Page 🚀
 
-- ✅ **Frontend Cart Page**
+✅ _Backend & API Integration_
 
-  - Created a dedicated Cart Page UI to display products inside the cart.
-  - Integrated the frontend with the backend endpoint from Milestone 18 to fetch cart items.
+- Created an endpoint to send **user profile data** (photo, name, email, and address).
+- Implemented **authentication** and **error handling** for secure access.
+- Integrated the frontend to fetch and display user details dynamically.
 
-- ✅ **Quantity Management**
+✅ _Frontend Profile Page_
 
-  - Implemented `+` (increase) and `-` (decrease) buttons for each cart product.
-  - Users can modify product quantities dynamically.
-
-- ✅ **Backend Endpoints for Quantity Update**
-  - Created API endpoints to handle incrementing and decrementing the product quantity inside the cart.
-  - Integrated these endpoints with the frontend.
-- ✅ **Testing and Validation**
-  - Ensured smooth UI interaction for increasing and decreasing quantities.
-  - Tested API responses to validate quantity updates.
-
----
+- Designed a **Profile Page** displaying **profile photo, name, and email**.
+- Added an **Address Section** with an **"Add Address"** button.
+- Displayed **"No address found"** if no address is available.
+- Ensured smooth **UI updates** when adding an address. 🚀
