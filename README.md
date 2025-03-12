@@ -1,14 +1,20 @@
-## Milestone 18: Fetching Cart Products
+### **Milestone 19: Cart Page UI & Quantity Management**
 
-✅ Backend Cart Retrieval Endpoint
-Created an endpoint to fetch all products inside a user's cart.
+- ✅ **Frontend Cart Page**
 
-✅ User-Based Filtering
-Implemented logic to retrieve cart products based on the logged-in user's email.
+  - Created a dedicated Cart Page UI to display products inside the cart.
+  - Integrated the frontend with the backend endpoint from Milestone 18 to fetch cart items.
 
-✅ API Integration with Frontend
-Integrated the frontend cart page with the backend to fetch and display cart items.
+- ✅ **Quantity Management**
 
-✅ Testing and Validation
-Ensured that the cart data retrieval process is working correctly.
-Tested API responses for accuracy and efficiency.
+  - Implemented `+` (increase) and `-` (decrease) buttons for each cart product.
+  - Users can modify product quantities dynamically.
+
+- ✅ **Backend Endpoints for Quantity Update**
+  - Created API endpoints to handle incrementing and decrementing the product quantity inside the cart.
+  - Integrated these endpoints with the frontend.
+- ✅ **Testing and Validation**
+  - Ensured smooth UI interaction for increasing and decreasing quantities.
+  - Tested API responses to validate quantity updates.
+
+---
