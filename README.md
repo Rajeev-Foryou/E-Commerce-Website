@@ -1,14 +1,15 @@
-### Milestone 20: User Profile Page 🚀
+## Milestone 21: Address Form Page 🏠
 
-✅ _Backend & API Integration_
+✅ Address Form Implementation
 
-- Created an endpoint to send **user profile data** (photo, name, email, and address).
-- Implemented **authentication** and **error handling** for secure access.
-- Integrated the frontend to fetch and display user details dynamically.
+Created an Address Form Page with input fields for address, city, state, and ZIP code.
 
-✅ _Frontend Profile Page_
+Used useState to manage the address input dynamically.
 
-- Designed a **Profile Page** displaying **profile photo, name, and email**.
-- Added an **Address Section** with an **"Add Address"** button.
-- Displayed **"No address found"** if no address is available.
-- Ensured smooth **UI updates** when adding an address. 🚀
+✅ Navigation & Integration
+
+Added an "Add Address" button in the Profile Page.
+
+Configured routing to navigate from Profile Page to Address Form Page.
+
+Updated App.jsx to include the new route.
