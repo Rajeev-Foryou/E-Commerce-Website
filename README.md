@@ -1,15 +1,13 @@
-## Milestone 21: Address Form Page 🏠
+## Milestone 22: Address API Integration 🌐
 
-✅ Address Form Implementation
+✅ Backend Endpoint Implementation
 
-Created an Address Form Page with input fields for address, city, state, and ZIP code.
+- Created an API endpoint to receive the address from the frontend.
+- Validated and stored the address in the `address` array inside the user collection.
 
-Used useState to manage the address input dynamically.
+✅ Database Integration
 
-✅ Navigation & Integration
+- Updated the user schema to ensure multiple addresses can be stored.
+- Implemented authentication and error handling for secure address updates.
 
-Added an "Add Address" button in the Profile Page.
-
-Configured routing to navigate from Profile Page to Address Form Page.
-
-Updated App.jsx to include the new route.
+Now, users can add their address, and it will be stored successfully! 🚀
