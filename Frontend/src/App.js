@@ -11,6 +11,8 @@ import {
   ProductDetails,
   Profile,
   CreateAddress,
+  SelectAddress,
+  OrderConfirmation,
 } from "./Routess.js";
 import "./App.css";
 
@@ -32,6 +34,8 @@ const App = () => {
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/create-address" element={<CreateAddress />} />
+        <Route path="/select-address" element={<SelectAddress />} />
+        <Route path="/order-confirmation" element={<OrderConfirmation />} />
       </Routes>
     </BrowserRouter>
   );
