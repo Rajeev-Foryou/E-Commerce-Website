@@ -1,13 +1,10 @@
-## Milestone 25: Order Processing Backend ⚙️
+## Milestone 26: Fetch User Orders API 📦
 
-✅ Order API Implementation
+✅ Order Retrieval Endpoint
 
-Created an endpoint to receive products, user, and address details.
-
+Created an endpoint to receive the user’s email.
 Retrieved the \_id of the user using their email.
+✅ Fetch & Response
 
-✅ Order Storage
-
-Stored each product as a separate order with the same address.
-
-Used the existing Order schema to save order details in MongoDB.
+Used the \_id to fetch all orders of the user from the database.
+Sent all user orders in the API response.
