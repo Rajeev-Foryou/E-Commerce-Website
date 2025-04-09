@@ -7,7 +7,6 @@ router.post("/place-order", async (req, res) => {
   try {
     const { email, orderItems, shippingAddress } = req.body;
 
-    // Validate request data
     if (!email) {
       return res.status(400).json({ message: "Email is required." });
     }
@@ -38,8 +37,8 @@ router.post("/place-order", async (req, res) => {
 
     const orders = await Promise.all(orderPromises);
 
-    // Clear user's cart after placing orders (assuming a Cart model exists)
-    // await Cart.deleteMany({ user: user._id });
+    user.cart = [];
+    await user.save();
 
     res
       .status(201)
@@ -52,6 +51,7 @@ router.post("/place-order", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+
 router.get("/my-orders", async (req, res) => {
   try {
     const { email } = req.query;
@@ -70,6 +70,29 @@ router.get("/my-orders", async (req, res) => {
     // Find all orders associated with the user
     const orders = await Order.find({ user: user._id });
 
+    res.status(200).json({ orders });
+  } catch (error) {
+    console.error("Error fetching orders:", error);
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.get("/myorders", async (req, res) => {
+  try {
+    // Retrieve email from query parameters
+    const { email } = req.query;
+    if (!email) {
+      return res.status(400).json({ message: "Email is required." });
+    }
+
+    // Find user by email
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "User not found." });
+    }
+
+    // Retrieve orders for the user
+    const orders = await Order.find({ user: user._id });
     res.status(200).json({ orders });
   } catch (error) {
     console.error("Error fetching orders:", error);
