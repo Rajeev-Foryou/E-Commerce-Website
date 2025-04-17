@@ -1,13 +1,10 @@
-## Milestone 30: PayPal Integration 💳
+## Milestone 31: JWT Auth & Member CRUD 🔐
 
-✅ PayPal Account Setup
+✅ JWT Authentication
 
-Created a PayPal Developer account and a Sandbox account.
-Retrieved and stored the Client ID.
-✅ Implementation
+Implemented secure login and signup using JWT tokens.
+Stored token in localStorage and protected member routes with auth middleware.
+✅ Member CRUD + UI Enhancements
 
-Installed react-paypal-js.
-Used PayPalScriptProvider to integrate PayPal payment options.
-✅ Testing
-
-Verified transactions using the Sandbox environment.
+Added full Create, Read, Update, Delete features for gym members.
+Enhanced UI with field icons, top banner, and improved layout for better experience.
