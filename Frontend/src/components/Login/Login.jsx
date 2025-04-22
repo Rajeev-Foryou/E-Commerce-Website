@@ -1,11 +1,18 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import styles from "../../styles/styles";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setemail } from "../../store/userActions";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate(); // Initialize navigate
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [visible, setVisible] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -14,14 +21,15 @@ const Login = () => {
         { email, password }
       );
       console.log(response.data);
+      // Dispatch action to store email in Redux state
+      dispatch(setemail(email));
+      // Redirect to profile page after successful login
+      navigate("/");
     } catch (error) {
       console.error("There was an error logging in!", error);
     }
   };
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [visible, setVisible] = useState(false);
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -84,6 +92,7 @@ const Login = () => {
                 )}
               </div>
             </div>
+
             <div className={`${styles.noramlFlex} justify-between`}>
               <div className={`${styles.noramlFlex}`}>
                 <input
@@ -108,6 +117,7 @@ const Login = () => {
                 </a>
               </div>
             </div>
+
             <div>
               <button
                 type="submit"
@@ -116,6 +126,7 @@ const Login = () => {
                 Submit
               </button>
             </div>
+
             <div className={`${styles.noramlFlex} w-full`}>
               <h4>Not have any account?</h4>
             </div>
