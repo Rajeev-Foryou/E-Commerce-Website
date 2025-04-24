@@ -1,27 +1,22 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../axiosConfig";
 import Nav from "../components/nav";
-import { useSelector } from "react-redux"; // Import useSelector
+import { useSelector } from "react-redux";
 
 const MyOrdersPage = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-
-  // Retrieve email from Redux state
   const email = useSelector((state) => state.user.email);
 
   const fetchOrders = async () => {
-    if (!email) return; // Only fetch if email is available
+    if (!email) return;
     try {
       setLoading(true);
       setError("");
-      const response = await axios.get(
-        "http://localhost:8000/api/v2/orders/myorders",
-        {
-          params: { email },
-        }
-      );
+      const response = await axios.get("/api/v2/orders/myorders", {
+        params: { email },
+      });
       setOrders(response.data.orders);
     } catch (err) {
       setError(err.response?.data?.message || "Error fetching orders");
@@ -30,20 +25,13 @@ const MyOrdersPage = () => {
     }
   };
 
-  // Cancel order handler
   const cancelOrder = async (orderId) => {
     try {
+      // Example route patch / cancel might not exist in your code
       const response = await axios.patch(
-        `http://localhost:8000/api/v2/orders/cancel-order/${orderId}`
+        `/api/v2/orders/cancel-order/${orderId}`
       );
-      // Update the order in local state: either remove or update its status.
-      setOrders((prevOrders) =>
-        prevOrders.map((order) =>
-          order._id === orderId
-            ? { ...order, status: response.data.order.status }
-            : order
-        )
-      );
+      // Update local state or refetch
       fetchOrders();
     } catch (err) {
       console.error(err);
@@ -53,7 +41,8 @@ const MyOrdersPage = () => {
 
   useEffect(() => {
     fetchOrders();
-  }, [email]); // Dependency array includes email
+    // eslint-disable-next-line
+  }, [email]);
 
   return (
     <>
